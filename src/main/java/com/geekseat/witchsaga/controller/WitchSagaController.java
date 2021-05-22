@@ -7,6 +7,7 @@ import com.geekseat.witchsaga.service.WitchSagaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class WitchSagaController {
     @Autowired
     private WitchSagaService witchSagaService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/stop-the-witch")
     public ResponseEntity<?> actions(@RequestParam("deathAgePerson1") int deathAgePerson1,
             @RequestParam("deathYearPerson1") int deathYearPerson1,
